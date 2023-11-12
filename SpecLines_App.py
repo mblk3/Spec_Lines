@@ -2,13 +2,28 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import pandas as pd
+import os
+#cwd = os.getcwd()
+#st.write(cwd)
 
 st.title("Automatic Classification of Atomic Spectral Lines")
 st.subheader("Version 1.0")
 
-joblibFile = open('classifier_model.pkl', 'rb')
 
-model = pickle.load(joblibFile)
+current_directory = os.path.dirname(os.path.realpath(__file__))
+st.write(current_directory)
+model_filename = "classifier_model.pkl"
+model_path = os.path.join(current_directory, model_filename)
+
+with open(model_path, 'rb') as f:
+  model = pickle.load(f)
+
+#https://github.com/mblk3/MLM_Atomic_Spec_Lines/blob/02f6a04db06b459169ea0d19c347146ea1ad17d8/classifier_model.pkl
+#joblibFile = open('code_/classifier_model.pkl', 'rb')
+#joblibFile = open(url, 'rb')
+#model = pickle.load(joblibFile)
+#model = pd.read_pickle(r'mlm_atomic_spec_lines/classifier_model.pkl')
 
 #####################defs here#######################
 
