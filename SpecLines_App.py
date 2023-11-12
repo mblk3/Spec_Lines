@@ -4,6 +4,7 @@ import numpy as np
 import pickle
 import pandas as pd
 import os
+import sklearn
 #cwd = os.getcwd()
 #st.write(cwd)
 
