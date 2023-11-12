@@ -1,14 +1,14 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from joblib import dump, load
+import joblib
 
 st.title("Automatic Classification of Atomic Spectral Lines")
 st.subheader("Version 1.0")
 
 joblibFile = "model.joblib"
 
-model = load(joblibFile)
+model = joblib.load(joblibFile)
 
 #####################defs here#######################
 
