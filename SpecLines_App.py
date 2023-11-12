@@ -1,14 +1,14 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
+import pickle
 
 st.title("Automatic Classification of Atomic Spectral Lines")
 st.subheader("Version 1.0")
 
-joblibFile = "model.joblib"
+joblibFile = open('classifier_model.pkl', 'rb')
 
-model = joblib.load(joblibFile)
+model = pickle.load(joblibFile)
 
 #####################defs here#######################
 
